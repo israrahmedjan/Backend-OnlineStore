@@ -101,11 +101,12 @@ app.get("/myuploadfile", (req, res) => {
 
 app.get("/", (req, res) => {
 
-  if (!req.isAuthenticated()) {
-    return res.redirect('/user/login');
-  }
+  res.send("Hello Home page!");
+  // if (!req.isAuthenticated()) {
+  //   return res.redirect('/user/login');
+  // }
 
-  res.render('HomeView');
+  // res.render('HomeView');
 
 
 })
@@ -125,6 +126,7 @@ catch (err) {
 
 
 // Start the server
+const port = 5000 || process.env.PORT;
 app.listen(process.env.PORT, () => {
-  console.log('Server listening on port 5000');
+  console.log('Server listening on port', port);
 });
