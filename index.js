@@ -101,12 +101,12 @@ app.get("/myuploadfile", (req, res) => {
 
 app.get("/", (req, res) => {
 
-  res.send("Hello Home page!");
-  // if (!req.isAuthenticated()) {
-  //   return res.redirect('/user/login');
-  // }
+  // res.send("Hello Home page!");
+  if (!req.isAuthenticated()) {
+    return res.redirect('/user/login');
+  }
 
-  // res.render('HomeView');
+  res.render('HomeView');
 
 
 })
